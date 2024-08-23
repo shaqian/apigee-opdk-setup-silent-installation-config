@@ -109,3 +109,10 @@ QPID_PORT={{ qpid_ext_mgmt_port | default('8083') }}
 MX_GROUP={{ mxgroup | default('mxgroup') }}
 ORG_NAME={{ org_name }}
 {% endif %}
+
+{% if opdk_qpid_mgmt_username is defined and opdk_qpid_mgmt_username | trim | length > 0 %}
+QPID_MGMT_USERNAME={{ opdk_qpid_mgmt_username }}
+{% endif %}
+{% if opdk_qpid_mgmt_password is defined and opdk_qpid_mgmt_password | trim | length > 0 %}
+QPID_MGMT_PASSWORD={{ opdk_qpid_mgmt_password }}
+{% endif %}
